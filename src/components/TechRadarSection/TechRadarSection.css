@@ -1,0 +1,11 @@
+.tech-radar-section {
+  overflow: hidden;
+}
+
+.tech-radar-section .section__header {
+  max-width: 720px;
+}
+
+.tech-radar-section .section__header a {
+  color: var(--accent);
+}

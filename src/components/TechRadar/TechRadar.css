@@ -1,0 +1,57 @@
+.tech-radar {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tech-radar__canvas {
+  display: flex;
+  justify-content: center;
+  min-width: min(100%, 900px);
+}
+
+.tech-radar svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.tech-radar svg a {
+  cursor: pointer;
+}
+
+.radar-table {
+  width: 100%;
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.radar-table th,
+.radar-table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.radar-table th {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.radar-table td {
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .radar-table {
+    font-size: 0.8rem;
+  }
+
+  .radar-table th,
+  .radar-table td {
+    padding: 0.5rem;
+  }
+}
