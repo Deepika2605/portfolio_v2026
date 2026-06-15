@@ -11,6 +11,10 @@ export function TechRadar({ config }: TechRadarProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const initialized = useRef(false)
 
+  // debug: log incoming config to help diagnose missing fields
+  // eslint-disable-next-line no-console
+  console.log('TechRadar config:', config)
+
   useEffect(() => {
     if (initialized.current) return
     initialized.current = true

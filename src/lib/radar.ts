@@ -60,7 +60,6 @@ export function radar_visualization(config) {
     { radius: 130 },
     { radius: 220 },
     { radius: 310 },
-    { radius: 400 },
   ]
 
   function polar(cartesian) {
@@ -113,8 +112,8 @@ export function radar_visualization(config) {
       y: 15 * quadrants[quadrant].factor_y,
     }
     const cartesian_max = {
-      x: rings[3].radius * quadrants[quadrant].factor_x,
-      y: rings[3].radius * quadrants[quadrant].factor_y,
+      x: rings[rings.length - 1].radius * quadrants[quadrant].factor_x,
+      y: rings[rings.length - 1].radius * quadrants[quadrant].factor_y,
     }
     return {
       clipx(d) {
@@ -152,8 +151,8 @@ export function radar_visualization(config) {
 
   const segmented = new Array(4)
   for (let quadrant = 0; quadrant < 4; quadrant++) {
-    segmented[quadrant] = new Array(4)
-    for (let ring = 0; ring < 4; ring++) {
+    segmented[quadrant] = new Array(rings.length)
+    for (let ring = 0; ring < rings.length; ring++) {
       segmented[quadrant][ring] = []
     }
   }
@@ -164,7 +163,7 @@ export function radar_visualization(config) {
 
   let id = 1
   for (const quadrant of [2, 3, 1, 0]) {
-    for (let ring = 0; ring < 4; ring++) {
+    for (let ring = 0; ring < rings.length; ring++) {
       const entries = segmented[quadrant][ring]
       entries.sort((a, b) => a.label.localeCompare(b.label))
       for (let i = 0; i < entries.length; i++) {
@@ -190,6 +189,24 @@ export function radar_visualization(config) {
   const scaled_width = config.width * config.scale
   const scaled_height = config.height * config.scale
 
+  // Ensure quadrants array exists and has at least 4 elements to avoid runtime errors
+  if (!config.quadrants || !Array.isArray(config.quadrants)) {
+    config.quadrants = []
+  }
+  for (let i = 0; i < 4; i++) {
+    if (!config.quadrants[i]) config.quadrants[i] = { name: 'Quadrant ' + (i + 1) }
+  }
+
+  // Ensure config.rings has entries for each internal ring definition
+  if (!config.rings || !Array.isArray(config.rings)) {
+    config.rings = []
+  }
+  for (let i = 0; i < rings.length; i++) {
+    if (!config.rings[i]) {
+      config.rings[i] = { name: 'Ring ' + (i + 1), color: config.colors?.inactive || '#999' }
+    }
+  }
+
   const svg = d3
     .select('svg#' + config.svg_id)
     .style('background-color', config.colors.background)
@@ -197,6 +214,8 @@ export function radar_visualization(config) {
     .attr('height', scaled_height)
 
   const radar = svg.append('g')
+  // apply a default text fill color so labels remain visible on dark backgrounds
+  radar.attr('fill', config.text_color || '#fff')
   if ('zoomed_quadrant' in config) {
     svg.attr('viewBox', viewbox(config.zoomed_quadrant))
   } else {
@@ -331,7 +350,7 @@ export function radar_visualization(config) {
         .style('font-size', '18px')
         .style('font-weight', 'bold')
       let previousLegendHeight = 0
-      for (let ring = 0; ring < 4; ring++) {
+      for (let ring = 0; ring < config.rings.length; ring++) {
         if (ring % 2 === 0) {
           previousLegendHeight = 0
         }

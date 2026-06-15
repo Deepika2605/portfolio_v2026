@@ -1,5 +1,5 @@
 import { TechRadar } from '../TechRadar/TechRadar'
-import { techRadarConfig } from '../../lib/portfolio-data'
+import { techRadarConfig, skillsRadarConfig } from '../../lib/portfolio-data'
 import './TechRadarSection.css'
 
 export function TechRadarSection() {
@@ -20,7 +20,15 @@ export function TechRadarSection() {
           quadrants and maturity rings — Adopt, Trial, Assess, and Hold.
         </p>
       </div>
-      <TechRadar config={techRadarConfig} />
+      {/* Choose a safe config: prefer generated skillsRadarConfig when it has quadrants */}
+      {(() => {
+        const useSkills =
+          skillsRadarConfig &&
+          Array.isArray(skillsRadarConfig.quadrants) &&
+          skillsRadarConfig.quadrants.length >= 4
+        const configToUse = useSkills ? skillsRadarConfig : techRadarConfig
+        return <TechRadar config={configToUse} />
+      })()}
     </section>
   )
 }

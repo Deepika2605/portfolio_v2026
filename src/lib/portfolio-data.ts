@@ -137,3 +137,66 @@ export const portfolioData = {
 
 // Keep existing tech radar export for backward compatibility with components
 export { techRadarConfig } from '../data/techRadar'
+
+// Generate a skills-based RadarConfig here to avoid circular imports.
+import type { RadarConfig } from '../types/radar'
+
+const quadrantOrder = ['frontend', 'backend', 'database', 'tools']
+
+function makeSkillEntries(): RadarConfig['entries'] {
+  const entries: any[] = []
+
+  quadrantOrder.forEach((key, quadrantIndex) => {
+    const items = (portfolioData as any).skills?.[key]
+    if (!items) return
+    items.forEach((label: string) => {
+      entries.push({
+        label,
+        quadrant: quadrantIndex as 0 | 1 | 2 | 3,
+        ring: 0,
+        moved: 0,
+        active: true,
+      })
+    })
+  })
+
+  const otherKeys = Object.keys((portfolioData as any).skills || {}).filter(
+    (k) => !quadrantOrder.includes(k),
+  )
+  otherKeys.forEach((k) => {
+    const items = (portfolioData as any).skills?.[k]
+    items?.forEach((label: string) => {
+      entries.push({ label, quadrant: 3, ring: 1, moved: 0, active: true })
+    })
+  })
+
+  return entries
+}
+
+export const skillsRadarConfig: RadarConfig = {
+  title: `${portfolioData.name ?? 'My'} Tech Radar`,
+  date: new Date().toLocaleString('en-GB', { month: 'long', year: 'numeric' }),
+  repo_url: '#',
+  width: 1200,
+  height: 900,
+  scale: 0.72,
+  print_ring_descriptions_table: false,
+  colors: {
+    background: 'transparent',
+    grid: '#2a2f3a',
+    inactive: '#3a3f4a',
+  },
+  font_family: "'Source Sans 3', system-ui, sans-serif",
+  quadrants: [
+    { name: 'Languages & Frameworks' },
+    { name: 'Backend & Services' },
+    { name: 'Databases & Platforms' },
+    { name: 'Tools & Concepts' },
+  ],
+  rings: [
+    { name: 'NEWBIEE', color: '#5ba300' },
+    { name: 'PROFESSIONAL', color: '#009eb0' },
+    { name: 'EXPERT', color: '#c7ba00' },
+  ],
+  entries: makeSkillEntries(),
+}

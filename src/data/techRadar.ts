@@ -22,28 +22,19 @@ export const techRadarConfig: RadarConfig = {
   ],
   rings: [
     {
-      name: 'ADOPT',
+      name: 'NEWBIE',
       color: '#5ba300',
-      description:
-        'Technologies I use confidently in production and recommend widely.',
+      description: 'Technologies I am beginning to learn and experiment with.',
     },
     {
-      name: 'TRIAL',
+      name: 'PROFESSIONAL',
       color: '#009eb0',
-      description:
-        'Technologies I have used successfully in projects and am actively exploring.',
+      description: 'Technologies I use regularly and confidently in projects.',
     },
     {
-      name: 'ASSESS',
+      name: 'EXPERT',
       color: '#c7ba00',
-      description:
-        'Promising technologies worth researching and prototyping.',
-    },
-    {
-      name: 'HOLD',
-      color: '#e09b96',
-      description:
-        'Technologies I would not choose for new projects today.',
+      description: 'Technologies I consider myself an expert in and recommend.',
     },
   ],
   entries: [
@@ -53,7 +44,7 @@ export const techRadarConfig: RadarConfig = {
     { label: 'Python', quadrant: 0, ring: 1, moved: 0, active: true },
     { label: 'Next.js', quadrant: 0, ring: 1, moved: 1, active: true },
     { label: 'Rust', quadrant: 0, ring: 2, moved: 2, active: true },
-    { label: 'Angular', quadrant: 0, ring: 3, moved: -1, active: true },
+    { label: 'Angular', quadrant: 0, ring: 2, moved: -1, active: true },
 
     { label: 'Git', quadrant: 1, ring: 0, moved: 0, active: true },
     { label: 'VS Code', quadrant: 1, ring: 0, moved: 0, active: true },
@@ -67,13 +58,13 @@ export const techRadarConfig: RadarConfig = {
     { label: 'Vercel', quadrant: 2, ring: 1, moved: 1, active: true },
     { label: 'Redis', quadrant: 2, ring: 1, moved: 0, active: true },
     { label: 'Supabase', quadrant: 2, ring: 2, moved: 2, active: true },
-    { label: 'MongoDB', quadrant: 2, ring: 3, moved: -1, active: true },
+    { label: 'MongoDB', quadrant: 2, ring: 2, moved: -1, active: true },
 
     { label: 'CI/CD', quadrant: 3, ring: 0, moved: 0, active: true },
     { label: 'TDD', quadrant: 3, ring: 0, moved: 0, active: true },
     { label: 'Micro-frontends', quadrant: 3, ring: 1, moved: 0, active: true },
     { label: 'Event-driven', quadrant: 3, ring: 1, moved: 0, active: true },
     { label: 'GraphQL', quadrant: 3, ring: 2, moved: 0, active: true },
-    { label: 'Monolith-first', quadrant: 3, ring: 3, moved: 0, active: true },
+    { label: 'Monolith-first', quadrant: 3, ring: 2, moved: 0, active: true },
   ],
 }

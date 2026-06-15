@@ -7,11 +7,15 @@
   display: flex;
   justify-content: center;
   min-width: min(100%, 900px);
+  /* allow radar SVG to render labels outside its bounding box without clipping */
+  overflow: visible;
 }
 
 .tech-radar svg {
   max-width: 100%;
   height: auto;
+  /* ensure SVG children (text/legend) are visible when positioned outside the viewBox */
+  overflow: visible;
 }
 
 .tech-radar svg a {
