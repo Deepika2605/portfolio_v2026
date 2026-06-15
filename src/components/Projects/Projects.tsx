@@ -1,30 +1,9 @@
 import './Projects.css'
-
-const projects = [
-  {
-    title: 'E-commerce Dashboard',
-    description:
-      'A real-time analytics dashboard for online retailers with interactive charts and inventory management.',
-    tags: ['React', 'TypeScript', 'D3.js'],
-    link: '#',
-  },
-  {
-    title: 'Task Collaboration App',
-    description:
-      'A team productivity tool with real-time sync, kanban boards, and Slack integrations.',
-    tags: ['Next.js', 'PostgreSQL', 'WebSockets'],
-    link: '#',
-  },
-  {
-    title: 'Design System',
-    description:
-      'An accessible component library with Storybook documentation used across multiple products.',
-    tags: ['React', 'Storybook', 'CSS'],
-    link: '#',
-  },
-]
+import { portfolioData } from '../../lib/portfolio-data'
 
 export function Projects() {
+  const projects = portfolioData?.projects ?? []
+
   return (
     <section className="section projects" id="projects">
       <div className="section__header">
@@ -32,18 +11,18 @@ export function Projects() {
         <p>Selected work showcasing full-stack development and UI craft.</p>
       </div>
       <div className="projects__grid">
-        {projects.map((project) => (
+        {projects.map((project: any) => (
           <article key={project.title} className="project-card">
             <h3>{project.title}</h3>
             <p>{project.description}</p>
             <div className="project-card__tags">
-              {project.tags.map((tag) => (
+              {project.tech?.map((tag: string) => (
                 <span key={tag} className="tag">
                   {tag}
                 </span>
               ))}
             </div>
-            <a href={project.link} className="project-card__link">
+            <a href={project.url ?? '#'} className="project-card__link">
               Learn more →
             </a>
           </article>

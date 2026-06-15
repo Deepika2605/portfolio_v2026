@@ -1,5 +1,5 @@
 import { TechRadar } from '../TechRadar/TechRadar'
-import { techRadarConfig } from '../../data/techRadar'
+import { techRadarConfig } from '../../lib/portfolio-data'
 import './TechRadarSection.css'
 
 export function TechRadarSection() {

@@ -1,4 +1,5 @@
 import './Navbar.css'
+import { portfolioData } from '../../lib/portfolio-data'
 
 const links = [
   { href: '#about', label: 'About' },
@@ -8,10 +9,12 @@ const links = [
 ]
 
 export function Navbar() {
+  const name = portfolioData?.name ?? 'Portfolio'
+
   return (
     <header className="navbar">
       <a href="#" className="navbar__logo">
-        Portfolio
+        {name}
       </a>
       <nav className="navbar__nav" aria-label="Main navigation">
         {links.map((link) => (
