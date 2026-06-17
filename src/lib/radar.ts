@@ -56,10 +56,11 @@ export function radar_visualization(config) {
     { radial_min: -0.5, radial_max: 0, factor_x: 1, factor_y: -1 },
   ]
 
+  // Increased radii to make the radar bigger (three rings)
   const rings = [
-    { radius: 130 },
-    { radius: 220 },
-    { radius: 310 },
+    { radius: 160 },
+    { radius: 280 },
+    { radius: 400 },
   ]
 
   function polar(cartesian) {
@@ -177,12 +178,15 @@ export function radar_visualization(config) {
   }
 
   function viewbox(quadrant) {
-    return [
-      Math.max(0, quadrants[quadrant].factor_x * 400) - 420,
-      Math.max(0, quadrants[quadrant].factor_y * 400) - 420,
-      440,
-      440,
-    ].join(' ')
+    // compute viewbox dynamically from outer ring radius so the
+    // larger radar does not get clipped
+    const outer = rings[rings.length - 1].radius + 120
+    const pad = 20
+    const x = Math.max(0, quadrants[quadrant].factor_x * outer) - (outer + pad)
+    const y = Math.max(0, quadrants[quadrant].factor_y * outer) - (outer + pad)
+    const w = outer * 2 + pad * 2
+    const h = outer * 2 + pad * 2
+    return [x, y, w, h].join(' ')
   }
 
   config.scale = config.scale || 1
@@ -323,7 +327,7 @@ export function radar_visualization(config) {
       )
       .text(config.date || '')
       .style('font-family', config.font_family)
-      .style('font-size', '14')
+      .style('font-size', '16')
       .style('fill', '#999')
 
     radar
@@ -332,7 +336,7 @@ export function radar_visualization(config) {
       .text('▲ moved up ▼ moved down ★ new ⬤ no change')
       .attr('xml:space', 'preserve')
       .style('font-family', config.font_family)
-      .style('font-size', '12px')
+      .style('font-size', '15px')
 
     const legend = radar.append('g')
     for (let quadrant = 0; quadrant < 4; quadrant++) {
@@ -347,7 +351,7 @@ export function radar_visualization(config) {
         )
         .text(config.quadrants[quadrant].name)
         .style('font-family', config.font_family)
-        .style('font-size', '18px')
+        .style('font-size', '20px')
         .style('font-weight', 'bold')
       let previousLegendHeight = 0
       for (let ring = 0; ring < config.rings.length; ring++) {
@@ -368,7 +372,7 @@ export function radar_visualization(config) {
           )
           .text(config.rings[ring].name)
           .style('font-family', config.font_family)
-          .style('font-size', '12px')
+          .style('font-size', '15px')
           .style('font-weight', 'bold')
           .style('fill', config.rings[ring].color)
         legend
@@ -400,7 +404,7 @@ export function radar_visualization(config) {
             return d.id + '. ' + d.label
           })
           .style('font-family', config.font_family)
-          .style('font-size', '11px')
+          .style('font-size', '15px')
           .on('mouseover', function (event, d) {
             showBubble(d)
             highlightLegendItem(d)
@@ -480,7 +484,7 @@ export function radar_visualization(config) {
   bubble
     .append('text')
     .style('font-family', config.font_family)
-    .style('font-size', '10px')
+    .style('font-size', '12px')
     .style('fill', '#fff')
   bubble
     .append('path')
@@ -574,10 +578,10 @@ export function radar_visualization(config) {
     } else if (d.moved == 2) {
       blip
         .append('path')
-        .attr('d', d3.symbol().type(d3.symbolStar).size(200))
+        .attr('d', d3.symbol().type(d3.symbolStar).size(400))
         .style('fill', d.color)
     } else {
-      blip.append('circle').attr('r', 9).attr('fill', d.color)
+      blip.append('circle').attr('r', 12).attr('fill', d.color)
     }
 
     if (d.active || config.print_layout) {
@@ -590,7 +594,7 @@ export function radar_visualization(config) {
         .style('fill', '#fff')
         .style('font-family', config.font_family)
         .style('font-size', function () {
-          return blip_text.length > 2 ? '8px' : '9px'
+          return blip_text.length > 2 ? '11px' : '12px'
         })
         .style('pointer-events', 'none')
         .style('user-select', 'none')
@@ -606,6 +610,7 @@ export function radar_visualization(config) {
   d3.forceSimulation()
     .nodes(config.entries)
     .velocityDecay(0.19)
-    .force('collision', d3.forceCollide().radius(12).strength(0.85))
+    // bump collision radius so larger blips don't overlap as much
+    .force('collision', d3.forceCollide().radius(18).strength(0.85))
     .on('tick', ticked)
 }

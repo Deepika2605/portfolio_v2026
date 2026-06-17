@@ -146,27 +146,56 @@ const quadrantOrder = ['frontend', 'backend', 'database', 'tools']
 function makeSkillEntries(): RadarConfig['entries'] {
   const entries: any[] = []
 
+  // Simple per-skill ring map. Edit these values (0/1/2).
+  const skillToRing: Record<string, number> = {
+    React: 2,
+    'TypeScript': 2,
+    'Javascript': 2,
+    'Next.js': 2,
+    'D3.js': 2,
+    'Node.js': 1,
+    Python: 1,
+    Docker: 1,
+    AWS: 1,
+    Git: 0,
+    Figma: 0,
+  }
+
+  // Fallback ring if a skill is not present in the map
+  const fallbackRing = 1
+
+  // Normalize the skill-to-ring map for case-insensitive lookup
+  const skillToRingNorm: Record<string, number> = Object.fromEntries(
+    Object.entries(skillToRing).map(([k, v]) => [k.toLowerCase().trim(), v]),
+  )
+
   quadrantOrder.forEach((key, quadrantIndex) => {
-    const items = (portfolioData as any).skills?.[key]
+    const items = (portfolioData as any).skills?.[key] as string[] | undefined
     if (!items) return
-    items.forEach((label: string) => {
+    items.forEach((label) => {
+      const lookup = (label ?? '').toString().toLowerCase().trim()
+      const ring = skillToRingNorm[lookup] ?? fallbackRing
       entries.push({
         label,
         quadrant: quadrantIndex as 0 | 1 | 2 | 3,
-        ring: 0,
+        ring,
         moved: 0,
         active: true,
       })
     })
   })
 
+  // Include any other skill categories (placed into quadrant 3)
   const otherKeys = Object.keys((portfolioData as any).skills || {}).filter(
     (k) => !quadrantOrder.includes(k),
   )
   otherKeys.forEach((k) => {
-    const items = (portfolioData as any).skills?.[k]
-    items?.forEach((label: string) => {
-      entries.push({ label, quadrant: 3, ring: 1, moved: 0, active: true })
+    const items = (portfolioData as any).skills?.[k] as string[] | undefined
+    if (!items) return
+    items.forEach((label) => {
+      const lookup = (label ?? '').toString().toLowerCase().trim()
+      const ring = skillToRingNorm[lookup] ?? fallbackRing
+      entries.push({ label, quadrant: 3, ring, moved: 0, active: true })
     })
   })
 
