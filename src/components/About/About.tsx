@@ -1,5 +1,6 @@
 import './About.css'
 import { portfolioData } from '../../lib/portfolio-data'
+import profilePic from '../../assets/profile.jpeg'
 
 export function About() {
   const bio = portfolioData?.bio ?? ''
@@ -15,6 +16,9 @@ export function About() {
           {bio.split('\n').map((para, i) => (
             <p key={i}>{para.trim()}</p>
           ))}
+        </div>
+        <div className="about__profilePicture">
+          <img src={profilePic} alt={portfolioData?.name} />
         </div>
       </div>
     </section>
