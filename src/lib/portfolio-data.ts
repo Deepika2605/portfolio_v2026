@@ -15,13 +15,13 @@ export const portfolioData = {
       id: 1,
       company: "GfK SE",
       role: "Software Engineer",
-      duration: "Jan 2023 - Present",
-      description: ["Full-stack development of the SpexOnline application using React, TypeScript, and Reactive Spring Boot.",
-    "Designed and implemented scalable, data-driven REST APIs supporting high-volume application workflows.",
-    "Integrated the enterprise-wide design system (EDS) to ensure consistent, accessible, and reusable UI components.",
-    "Successfully delivered multi-language support by implementing React-i18next, improving product usability for international users.",
-    "Collaborated with designers, backend engineers, and product stakeholders across distributed teams.",
-    "Actively identified and resolved bugs, production issues, and support requests with strong attention to detail."],
+      duration: "Jan 2023 - Apr 2026",
+      description: ["Architected, built, and maintained clean, efficient, and reusable frontend components using modern React and TypeScript to drive user-facing features.",
+        "Collaborated closely with designers, backend engineers, and Product Management to refine requirements and translate ambiguous concept ideas into high-quality, user-friendly SaaS application features.",
+        "Integrated the enterprise-wide design system (EDS) to ensure highly consistent, accessible, and high-performance UI components across distributed team projects.",
+        "Took full ownership of features from concept to production, utilizing a proactive problem-solving approach to research and implement solutions for complex technical challenges.",
+        "Exercised meticulous attention to detail during code reviews, actively identifying and resolving bugs while enhancing overall user interface responsiveness and application maintainability."
+      ],
       skills: ["React", "Node.js", "TypeScript", "PostgreSQL"]
     },
     {
@@ -29,10 +29,10 @@ export const portfolioData = {
       company: "Carl Zeiss AG",
       role: "Frontend Engineer",
       duration: "Nov 2021 - Dec 2023",
-      description: ["Worked as part of a customer journey team, closely collaborating with UI/UX designers and product owners to build customer-centric web applications.",
-    "Developed microservice-based user interfaces using React, with Node.js based backend integration.",
-    "Designed and maintained automated UI tests to ensure reliability and performance.",
-    "Contributed to group-level technical and business discussions in a distributed enterprise environment."
+      description: ["Served as a key engineering team member within a customer journey squad, building customer-centric web applications and driving feature developments forward.",
+        "Developed scalable microservice architecture user interfaces using modern React, ensuring seamless communication with Node.js backend layers via REST API principles.",
+        "Assumed complete ownership of code quality by designing, executing, and maintaining automated UI and integration tests to ensure long-term stability and product performance.",
+        "Acted as a technical leader in group-level and cross-team project discussions to align on robust solution designs, deliver significant business features, and mentor junior engineers."
       ],
       skills: ["Next.js", "Python", "MongoDB", "AWS"]
     },
@@ -41,32 +41,32 @@ export const portfolioData = {
       company: "Softwaere AG",
       role: "Working Student (Software Developer)",
       duration: "Jan 2020 - Sep 2021",
-      description: ["Developed responsive user interfaces using HTML5, AngularJS/Angular 6, Sass, and Bootstrap.",
-    "Implemented Java plugins for Apama (complex event processing engine) using event processing language (EPL).",
-    "Designed and implemented HTTP-based RESTful APIs."
+      description: ["Developed responsive, user-friendly interfaces using HTML5, JavaScript, Sass, and Bootstrap, ensuring high visual accuracy and performance.",
+        "Designed and implemented HTTP-based RESTful APIs, working closely with engineering teams to align data definitions and system schemas.",
+        "Conducted component-level debugging and optimized existing code structures to support a growing ecosystem designed for long-term resilience."
       ],
       skills: ["React", "CSS", "JavaScript", "Figma"]
     },
     {
-        id: 4,
-        company: "Robert Bosch India Pvt. Ltd.",
-        role: "Software Engineer",
-        duration: "Mar 2018 - Aug 2019",
-        description: ["Designed and developed user interfaces using Angular 6, HTML, CSS, and Bootstrap.",
-    "Implemented microservice using Spring Boot and REST APIs to migrate data between enterprise",
-    "Developed WebSocket-based communication for real-time device inventory tracking and firmware update",
-    "support."
-        ],
-        skills: ["Angular", "Spring Boot", "Java", "MySQL"]
+      id: 4,
+      company: "Robert Bosch India Pvt. Ltd.",
+      role: "Software Engineer",
+      duration: "Mar 2018 - Aug 2019",
+      description: ["Designed and developed modular frontend user interfaces utilizing Angular, TypeScript, HTML, and CSS to power enterprise applications.",
+        "Implemented backend microservices using Spring Boot and REST APIs to migrate critical ecosystem data safely between enterprise requirement management platforms.",
+        "Maintained end-to-end delivery ownership of real-time device inventory tracking features, coordinating with cross-functional product stakeholders to build practical, scalable tools.",
+        "Wrote unit and system test cases to guarantee functional accuracy, security, and stability prior to production rollouts."
+      ],
+      skills: ["Angular", "Spring Boot", "Java", "MySQL"]
     },
     {
       id: 5,
       company: "Tata Consultancy Services",
       role: "System Engineer",
       duration: "Sep 2015 - Mar 2018",
-      description: ["Developed and enhanced enterprise application features using Java and Spring.",
-"Impact analysis, debugging, and code optimisation to ensure functional accuracy and system stability.",
-"Took on SPOC responsibilities as a fresher, managing cross-functional communication with trainers and HR and supporting team onboarding and coordination."
+      description: ["Developed and enhanced enterprise application features using Java, Spring, and database technologies.",
+        "Performed deep-dive impact analysis, debugging, and continuous code optimization to ensure system speed and functional reliability.",
+        "Acted as a single point of contact (SPOC) to coordinate cross-functional communication and support team onboarding, driving key deliverables forward under tight schedules."
       ],
       skills: ["Java", "Spring", "Git", "JIRA"]
     }
