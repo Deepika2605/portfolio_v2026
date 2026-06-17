@@ -26,11 +26,14 @@ export function CoreSkills() {
               <div className="core-col" key={cat}>
                 <h4 className="core-cat">{pretty}</h4>
                 <ul className="core-pills">
-                  {list.map((s) => (
-                    <li className="core-pill" key={s}>
-                      {s}
-                    </li>
-                  ))}
+                  {list.map((s) => {
+                    const slug = cat.toString().toLowerCase().replace(/\s+/g, '-')
+                    return (
+                      <li className={`core-pill pill-${slug}`} key={s}>
+                        {s}
+                      </li>
+                    )
+                  })}
                 </ul>
               </div>
             )

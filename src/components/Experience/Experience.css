@@ -2,9 +2,11 @@
   padding: 48px 0;
 }
 .experience-section .container {
-  max-width: 980px;
+  /* match main layout width; avoid extra horizontal padding (main provides it)
+     so content lines up with other sections */
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0;
 }
 .section-title {
   font-size: 1.5rem;

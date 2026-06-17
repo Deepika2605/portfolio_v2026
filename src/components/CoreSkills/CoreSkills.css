@@ -6,7 +6,7 @@
 .core-container-full {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0;
 }
 .core-heading {
   display: flex;
@@ -30,7 +30,6 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 12px 20px;
 }
-.core-col { }
 .core-cat {
   margin: 0 0 8px 0;
   font-size: 1rem;
@@ -53,6 +52,14 @@
   box-shadow: 0 8px 24px rgba(0, 123, 255, 0.12);
   font-size: 0.95rem;
 }
+
+/* Category-specific pill colors */
+.pill-frontend { background: linear-gradient(90deg,#4f46e5,#06b6d4); box-shadow: 0 10px 30px rgba(79,70,229,0.12); }
+.pill-backend { background: linear-gradient(90deg,#0ea5a4,#06b6d4); box-shadow: 0 10px 30px rgba(6,182,212,0.12); }
+.pill-database { background: linear-gradient(90deg,#8b5cf6,#ef4444); box-shadow: 0 10px 30px rgba(139,92,246,0.12); }
+.pill-concepts { background: linear-gradient(90deg,#f59e0b,#ec4899); box-shadow: 0 10px 30px rgba(245,158,11,0.12); }
+.pill-tools { background: linear-gradient(90deg,#10b981,#06b6d4); box-shadow: 0 10px 30px rgba(16,185,129,0.12); }
+.pill-default { background: #6b7280; color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
 
 @media (min-width: 700px) {
   .core-grid {
