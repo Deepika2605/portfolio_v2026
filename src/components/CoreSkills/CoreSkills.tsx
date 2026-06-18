@@ -1,4 +1,3 @@
-import React from 'react'
 import './CoreSkills.css'
 import { portfolioData } from '../../lib/portfolio-data'
 
