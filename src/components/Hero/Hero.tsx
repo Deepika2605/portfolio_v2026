@@ -1,4 +1,5 @@
 import './Hero.css'
+import { trackEvent } from '../../lib/analytics' 
 
 export function Hero() {
   return (
@@ -25,7 +26,15 @@ export function Hero() {
         {/* <a href="#projects" className="btn btn--primary">
           View projects
         </a> */}
-        <a href="#tech-radar" className="btn btn--primary">
+        <a href="#tech-radar" 
+          className="btn btn--primary" 
+          onClick={() =>
+            trackEvent('button_click', {
+              button_name: 'tech_radar',
+              transport_type: 'beacon',
+            })
+          }
+          >
           Tech radar
         </a>
       </div>
