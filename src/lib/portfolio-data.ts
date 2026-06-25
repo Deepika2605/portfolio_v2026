@@ -4,11 +4,7 @@ export const portfolioData = {
   title: "Full Stack Developer",
   email: "deepika.sathia26@gmail.com",
   location: "Nürnberg, Germany",
-  bio: `Having 7 years of experience building user-friendly, scalable, and 
-  responsive web applications that are both visually refined and functionally robust. 
-  Strong collaborator with UI/UX designers and QA teams to bridge design and implementation, 
-  resulting in high-quality software with reduced defects. 
-  Possesses a solid foundation in algorithms and logical problem-solving.`,
+  bio: `Having 7 years of experience building user-friendly, scalable, and responsive web applications that are both visually refined and functionally robust. Strong collaborator with UI/UX designers and QA teams to bridge design and implementation, resulting in high-quality software with reduced defects. Possesses a solid foundation in algorithms and logical problem-solving.`,
   
   experience: [
     {
