@@ -10,6 +10,9 @@ const GA_ID = import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined
 let initialized = false
 
 export function initGA() {
+    console.info('[analytics] initGA called')
+    console.info('[analytics] GA_ID value:', GA_ID)
+
   if (typeof window === 'undefined' || typeof document === 'undefined') return
   if (!GA_ID || initialized) return
 
