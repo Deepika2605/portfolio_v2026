@@ -1,12 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap');
 
 :root {
+  /* Dark theme base - clean and professional */
   --bg: #0a0c12;
   --surface: #141820;
+  --surface-light: #1a1f2e;
   --border: #2a2f3a;
-  --text: #e8eaed;
-  --text-muted: #9aa0ad;
-  --accent: #5ba300;
+  
+  /* Text - better hierarchy */
+  --text: #ffffff;           /* Pure white for headings */
+  --text-secondary: #e0e0e0; /* Slightly muted for body */
+  --text-muted: #9aa0ad;     /* For secondary info */
+  
+  /* Primary accent - Gold (from Tech Radar Expert ring) */
+  --accent: #c7ba00;
+  --accent-hover: #d4c700;
+  --accent-light: rgba(199, 186, 0, 0.15);
+  
+  /* Secondary accent - Cyan (from Tech Radar Professional ring) */
+  --accent-secondary: #009eb0;
+  --accent-secondary-light: rgba(0, 158, 176, 0.15);
+  
+  /* Status colors from Tech Radar */
+  --status-expert: #c7ba00;
+  --status-professional: #009eb0;
+  --status-newbie: #5ba300;
 }
 
 *,
@@ -24,7 +42,7 @@ body {
   font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: var(--text);
+  color: var(--text-secondary);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -40,6 +58,49 @@ a {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   color: var(--text);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+small {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
 }
