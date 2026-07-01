@@ -1,30 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Dark theme base - clean and professional */
+  /* Dark theme base */
   --bg: #0a0c12;
   --surface: #141820;
   --surface-light: #1a1f2e;
   --border: #2a2f3a;
   
-  /* Text - better hierarchy */
-  --text: #ffffff;           /* Pure white for headings */
-  --text-secondary: #e0e0e0; /* Slightly muted for body */
-  --text-muted: #9aa0ad;     /* For secondary info */
+  /* Text */
+  --text: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #9aa0ad;
   
-  /* Primary accent - Gold (from Tech Radar Expert ring) */
-  --accent: #c7ba00;
-  --accent-hover: #d4c700;
-  --accent-light: rgba(199, 186, 0, 0.15);
+  /* Primary accent - Mountain River Blue (cool, flowing, peaceful) */
+  --accent: #00c9ff;          /* Turquoise river water */
+  --accent-hover: #00b8e6;
+  --accent-light: rgba(0, 201, 255, 0.15);
   
-  /* Secondary accent - Cyan (from Tech Radar Professional ring) */
-  --accent-secondary: #009eb0;
-  --accent-secondary-light: rgba(0, 158, 176, 0.15);
+  /* Secondary accent - Sunrise Green (fresh, energetic, growth) */
+  --accent-secondary: #26de81; /* Vibrant mint/forest green */
+  --accent-secondary-light: rgba(38, 222, 129, 0.15);
   
-  /* Status colors from Tech Radar */
-  --status-expert: #c7ba00;
-  --status-professional: #009eb0;
-  --status-newbie: #5ba300;
+  /* Tertiary accent - Sky Blue (open, hopeful, peaceful) */
+  --accent-tertiary: #0099ff;  /* Bright sky blue */
+  --accent-tertiary-light: rgba(0, 153, 255, 0.15);
+  
+  /* Supporting colors - Mountain & Nature palette */
+  --accent-sunrise: #ffb347;   /* Warm peach/sunrise glow */
+  --accent-river-green: #20c997; /* Deep river green */
+  --accent-mountain-grey: #4a5568; /* Mountain stone */
+  --accent-sky: #87ceeb;       /* Soft sky blue */
 }
 
 *,
