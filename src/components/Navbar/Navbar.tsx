@@ -6,8 +6,7 @@ import { trackEvent } from '../../lib/analytics'
 const links = [
   { href: '#about', label: 'About' },
   { href: '#experience', label: 'Experience' },
-  { href: '#tech-radar', label: 'Tech Radar' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#tech-radar', label: 'Tech Radar' }
 ]
 
 export function Navbar() {
@@ -53,7 +52,7 @@ export function Navbar() {
     <header className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__container">
         <a href="#top" className="navbar__logo" onClick={() => handleNavClick('#top', 'Home')}>
-          {name.split(' ')[0]}
+          {name}
         </a>
 
         {/* Hamburger menu button */}
