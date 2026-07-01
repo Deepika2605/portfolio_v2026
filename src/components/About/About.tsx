@@ -16,6 +16,9 @@ export function About() {
           {bio.split('\n').map((para, i) => (
             <p key={i}>{para.trim()}</p>
           ))}
+          <p>
+            I also value vibe coding — building with a natural flow, clean structure, and strong product feel.
+          </p>
         </div>
         <div className="about__profilePicture">
           <img src={profilePic} alt={portfolioData?.name} />
