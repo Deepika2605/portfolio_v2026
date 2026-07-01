@@ -1,75 +1,85 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal portfolio built with React, TypeScript, and Vite. It's a single-page app that shows everything about me in one place - my about section, skills, experience, and projects. The app uses one main data file to keep everything organized and easy to update.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Getting this project running on your machine is pretty straightforward:
 
-## React Compiler
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Deepika2605/portfolio_v2026.git
+   cd portfolio_v2026
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## Expanding the ESLint configuration
+3. **Run the dev server**
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:5173/` in your browser. The page will refresh automatically when you make changes (HMR).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    ## portfolio_v2026 — README
+5. **Preview the production build**
+   ```bash
+   npm run preview
+   ```
 
-    This repository is a personal portfolio SPA built with React, TypeScript and Vite. The app centralizes data in a single source-of-truth and renders several components (About, Core Skills, Experience, Projects, Tech Radar, Contact, Footer).
+## Tech Radar
 
-    **Quick Start**
-    - **Install:** `npm install`
-    - **Dev server:** `npm run dev` (Vite with HMR)
-    - **Build:** `npm run build`
-    - **Preview build:** `npm run preview`
+The tech radar is a visual way I show my skills and expertise level. It's a circular chart with three rings:
 
-    **Project Structure (high level)**
-    - **`src/lib/portfolio-data.ts`**: single source of truth for your profile, experience, skills, projects and exports `skillsRadarConfig` used by the radar.
-    - **`src/components/*`**: React components. Notable additions:
-      - `About` — reads `portfolioData.bio` and displays profile image.
-      - `CoreSkills` — highlights grouped skills (pills colored per category).
-      - `Experience` — renders `portfolioData.experience` entries.
-      - `TechRadarSection` / `TechRadar` — D3-based radar visualization driven by `skillsRadarConfig`.
+- **NEWBIEE** — skills I'm just learning
+- **PROFESSIONAL** — skills I use regularly and feel confident with
+- **EXPERT** — skills I'm very good at and use often
 
-    **Data & Customization**
-    - Edit `src/lib/portfolio-data.ts` to update name, bio, experience, skills and projects.
-    - Skill → radar mapping:
-      - The file generates `skillsRadarConfig.entries` from `portfolioData.skills`.
-      - To change which ring a skill is in, edit the `skillToRing` map inside `src/lib/portfolio-data.ts` (values are 0-based indices mapping to `NEWBIEE`, `PROFESSIONAL`, `EXPERT`). Matching is case-insensitive.
-    - Core skills visuals: `src/components/CoreSkills/CoreSkills.css` defines category-specific pill styles (`pill-frontend`, `pill-backend`, etc.).
-    - Profile image: placed at `src/assets/profile.jpeg` and imported in `About` (you can replace this file or move it to `public/` and reference `/profile.jpeg`).
+### How it works
 
-    **Tech Radar notes**
-    - Radar rings: the visualization uses three rings: `NEWBIEE`, `PROFESSIONAL`, `EXPERT`.
-    - Key renderer: `src/lib/radar.ts`. Adjust `rings` radii, blip size, or text sizes in that file.
-    - The generator that maps `portfolioData.skills` to radar entries is implemented in `src/lib/portfolio-data.ts` to avoid circular imports.
+The radar reads all my skills from `src/lib/portfolio-data.ts`. Each skill gets placed on the radar based on my experience level with it. 
 
-    **Styling & Layout**
-    - The main page container uses `main { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }`. Components align to this layout.
-    - If sections appear misaligned, ensure component containers do not add duplicate horizontal padding (we standardized `CoreSkills` and `Experience` to avoid that).
+To update your skills on the radar:
+1. Edit `src/lib/portfolio-data.ts`
+2. Find the `skillToRing` map - this decides which ring each skill goes into
+3. Use 0, 1, or 2 for NEWBIEE, PROFESSIONAL, or EXPERT
+4. The radar updates automatically
 
-    **Files Added / Edited (high level)**
-    - `src/lib/portfolio-data.ts` — central data + `skillsRadarConfig` generator
-    - `src/components/Experience/Experience.tsx`, `Experience.css`
-    - `src/components/CoreSkills/CoreSkills.tsx`, `CoreSkills.css`
-    - `src/components/About/About.tsx` — changed to import profile image via ESM
-    - `src/lib/radar.ts` — adjusted for 3 rings, larger radii and blip sizes, dynamic viewbox
+The radar is built with D3 and renders in `src/components/TechRadarSection/`. If you want to adjust how it looks (ring sizes, text, etc.), edit `src/lib/radar.ts`.
 
-    **Developer tips**
-    - Use `npm run dev` and open the Local URL Vite prints (e.g., `http://localhost:5173/`) to preview with HMR.
-    - If you change the profile image and don't see it, ensure the image is imported (not referenced by absolute filesystem path) or placed in `public/`.
-    - To change pill colors or add new categories, update `CoreSkills.css` and the slug-to-class mapping in `CoreSkills.tsx`.
+## Project Structure
 
-    If you want, I can:
-    - add a `coreSkills` array to `portfolio-data.ts` for explicit ordering,
-    - add a small admin UI to change rings interactively,
-    - or extract a shared `.container` CSS rule to make alignment fully consistent across components.
+- **`src/lib/portfolio-data.ts`** — all your info in one place (bio, experience, skills, projects)
+- **`src/components/`** — React components:
+  - `About` — shows your profile and bio
+  - `CoreSkills` — displays skills with category colors
+  - `Experience` — lists your work experience
+  - `TechRadarSection` / `TechRadar` — the skill radar visualization
+- **`src/assets/`** — your profile image goes here
 
-    ---
-    Last updated: 17 June 2026
+## Customization
+
+**Update your info:**
+- Edit `src/lib/portfolio-data.ts` to change your name, bio, experience, and projects
+
+**Change skill colors:**
+- Edit `src/components/CoreSkills/CoreSkills.css` for category colors
+
+**Update profile image:**
+- Replace `src/assets/profile.jpeg` with your own image
+
+## Tips
+
+- Use `npm run dev` to see changes in real-time
+- If images don't show, make sure they're imported as modules, not referenced as file paths
+- The main layout is centered with a max-width of 1100px
+
+---
+
+Last updated: 1 July 2026
