@@ -137,7 +137,7 @@ export { techRadarConfig } from '../data/techRadar'
 // Generate a skills-based RadarConfig here to avoid circular imports.
 import type { RadarConfig } from '../types/radar'
 
-const quadrantOrder = ['frontend', 'backend', 'database', 'tools']
+const quadrantOrder = ['database', 'backend', 'frontend', 'tools']
 
 function makeSkillEntries(): RadarConfig['entries'] {
   const entries: any[] = []
@@ -149,12 +149,16 @@ function makeSkillEntries(): RadarConfig['entries'] {
     'Javascript': 2,
     'Next.js': 2,
     'D3.js': 2,
+    'Java': 2,
+    'Spring Boot': 2,
     'Node.js': 1,
-    Python: 1,
     Docker: 1,
+    'Vibe coding': 1,
     AWS: 1,
     Git: 0,
     Figma: 0,
+    'PostgreSQL': 0,
+    Python: 0
   }
 
   // Fallback ring if a skill is not present in the map
@@ -213,13 +217,13 @@ export const skillsRadarConfig: RadarConfig = {
   },
   font_family: "'Source Sans 3', system-ui, sans-serif",
   quadrants: [
-    { name: 'Languages & Frameworks' },
-    { name: 'Backend & Services' },
     { name: 'Databases & Platforms' },
+    { name: 'Backend & Services' },
+    { name: 'Languages & Frameworks' },
     { name: 'Tools & Concepts' },
   ],
   rings: [
-    { name: 'NEWBIEE', color: '#5ba300' },
+    { name: 'NEWBIE', color: '#5ba300' },
     { name: 'PROFESSIONAL', color: '#009eb0' },
     { name: 'EXPERT', color: '#c7ba00' },
   ],

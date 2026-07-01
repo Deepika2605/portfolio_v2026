@@ -25,7 +25,7 @@ export function TechRadarSection() {
             Zalando&apos;s open-source tech radar
           </a>
           , this visualization maps the technologies I work with across four
-          quadrants and maturity rings — Adopt, Trial, Assess, and Hold.
+          quadrants and rings — Newbie, Professional and Expert showing the level of expertise.
         </p>
       </div>
       {/* Choose a safe config: prefer generated skillsRadarConfig when it has quadrants */}
