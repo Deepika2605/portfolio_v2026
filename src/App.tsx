@@ -7,11 +7,14 @@ import { Experience } from './components/Experience/Experience'
 import { TechRadarSection } from './components/TechRadarSection/TechRadarSection'
 import { Contact } from './components/Contact/Contact'
 import { Footer } from './components/Footer/Footer'
+import { ScrollEffects } from './components/ScrollEffects/ScrollEffects'
+import './styles/animations.css'
 import './App.css'
 
 function App() {
   return (
     <>
+      <ScrollEffects />
       <Navbar />
       <main>
         <Hero />
