@@ -1,5 +1,5 @@
 .core-skills {
-  background: linear-gradient(135deg, rgba(199, 186, 0, 0.05) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(0, 201, 255, 0.05) 0%, rgba(38, 222, 129, 0.02) 100%);
   padding: 22px 0;
   margin: 14px 0 28px 0;
 }
@@ -55,90 +55,90 @@
 }
 
 .core-pill {
-  background: linear-gradient(135deg, rgba(199, 186, 0, 0.15), rgba(199, 186, 0, 0.1));
-  border: 1px solid rgba(199, 186, 0, 0.3);
+  background: linear-gradient(135deg, rgba(0, 201, 255, 0.15), rgba(0, 201, 255, 0.1));
+  border: 1px solid rgba(0, 201, 255, 0.3);
   color: #ffffff;
   padding: 6px 12px;
   border-radius: 999px;
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(199, 186, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 201, 255, 0.08);
   font-size: 0.95rem;
   transition: all 0.2s ease;
 }
 
 .core-pill:hover {
-  background: linear-gradient(135deg, rgba(199, 186, 0, 0.25), rgba(199, 186, 0, 0.15));
-  border-color: rgba(199, 186, 0, 0.5);
+  background: linear-gradient(135deg, rgba(0, 201, 255, 0.25), rgba(0, 201, 255, 0.15));
+  border-color: rgba(0, 201, 255, 0.5);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(199, 186, 0, 0.12);
+  box-shadow: 0 6px 16px rgba(0, 201, 255, 0.12);
 }
 
-/* Category-specific pill colors using Tech Radar palette */
+/* Category-specific pill colors using Sunrise Mountain River palette */
 .pill-frontend { 
-  background: linear-gradient(135deg, rgba(199, 186, 0, 0.2), rgba(0, 158, 176, 0.15));
-  border: 1px solid rgba(199, 186, 0, 0.4);
-  box-shadow: 0 4px 12px rgba(199, 186, 0, 0.1);
+  background: linear-gradient(135deg, rgba(0, 201, 255, 0.2), rgba(0, 153, 255, 0.15));
+  border: 1px solid rgba(0, 201, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 201, 255, 0.1);
 }
 
 .pill-frontend:hover {
-  background: linear-gradient(135deg, rgba(199, 186, 0, 0.3), rgba(0, 158, 176, 0.25));
-  border-color: rgba(199, 186, 0, 0.6);
+  background: linear-gradient(135deg, rgba(0, 201, 255, 0.3), rgba(0, 153, 255, 0.25));
+  border-color: rgba(0, 201, 255, 0.6);
 }
 
 .pill-backend { 
-  background: linear-gradient(135deg, rgba(0, 158, 176, 0.2), rgba(91, 163, 0, 0.15));
-  border: 1px solid rgba(0, 158, 176, 0.4);
-  box-shadow: 0 4px 12px rgba(0, 158, 176, 0.1);
+  background: linear-gradient(135deg, rgba(38, 222, 129, 0.2), rgba(32, 201, 151, 0.15));
+  border: 1px solid rgba(38, 222, 129, 0.4);
+  box-shadow: 0 4px 12px rgba(38, 222, 129, 0.1);
 }
 
 .pill-backend:hover {
-  background: linear-gradient(135deg, rgba(0, 158, 176, 0.3), rgba(91, 163, 0, 0.25));
-  border-color: rgba(0, 158, 176, 0.6);
+  background: linear-gradient(135deg, rgba(38, 222, 129, 0.3), rgba(32, 201, 151, 0.25));
+  border-color: rgba(38, 222, 129, 0.6);
 }
 
 .pill-database { 
-  background: linear-gradient(135deg, rgba(91, 163, 0, 0.15), rgba(199, 186, 0, 0.15));
-  border: 1px solid rgba(91, 163, 0, 0.3);
-  box-shadow: 0 4px 12px rgba(91, 163, 0, 0.08);
+  background: linear-gradient(135deg, rgba(255, 179, 71, 0.2), rgba(0, 201, 255, 0.15));
+  border: 1px solid rgba(255, 179, 71, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 179, 71, 0.08);
 }
 
 .pill-database:hover {
-  background: linear-gradient(135deg, rgba(91, 163, 0, 0.25), rgba(199, 186, 0, 0.25));
-  border-color: rgba(91, 163, 0, 0.5);
+  background: linear-gradient(135deg, rgba(255, 179, 71, 0.3), rgba(0, 201, 255, 0.25));
+  border-color: rgba(255, 179, 71, 0.5);
 }
 
 .pill-concepts { 
-  background: linear-gradient(135deg, rgba(199, 186, 0, 0.15), rgba(0, 158, 176, 0.15));
-  border: 1px solid rgba(199, 186, 0, 0.3);
-  box-shadow: 0 4px 12px rgba(199, 186, 0, 0.08);
+  background: linear-gradient(135deg, rgba(0, 153, 255, 0.2), rgba(38, 222, 129, 0.15));
+  border: 1px solid rgba(0, 153, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 153, 255, 0.08);
 }
 
 .pill-concepts:hover {
-  background: linear-gradient(135deg, rgba(199, 186, 0, 0.25), rgba(0, 158, 176, 0.25));
-  border-color: rgba(199, 186, 0, 0.5);
+  background: linear-gradient(135deg, rgba(0, 153, 255, 0.3), rgba(38, 222, 129, 0.25));
+  border-color: rgba(0, 153, 255, 0.5);
 }
 
 .pill-tools { 
-  background: linear-gradient(135deg, rgba(0, 158, 176, 0.15), rgba(91, 163, 0, 0.15));
-  border: 1px solid rgba(0, 158, 176, 0.3);
-  box-shadow: 0 4px 12px rgba(0, 158, 176, 0.08);
+  background: linear-gradient(135deg, rgba(38, 222, 129, 0.2), rgba(0, 201, 255, 0.15));
+  border: 1px solid rgba(38, 222, 129, 0.3);
+  box-shadow: 0 4px 12px rgba(38, 222, 129, 0.08);
 }
 
 .pill-tools:hover {
-  background: linear-gradient(135deg, rgba(0, 158, 176, 0.25), rgba(91, 163, 0, 0.25));
-  border-color: rgba(0, 158, 176, 0.5);
+  background: linear-gradient(135deg, rgba(38, 222, 129, 0.3), rgba(0, 201, 255, 0.25));
+  border-color: rgba(38, 222, 129, 0.5);
 }
 
 .pill-default { 
-  background: linear-gradient(135deg, rgba(91, 163, 0, 0.15), rgba(199, 186, 0, 0.1));
-  border: 1px solid rgba(91, 163, 0, 0.3);
+  background: linear-gradient(135deg, rgba(0, 201, 255, 0.15), rgba(38, 222, 129, 0.1));
+  border: 1px solid rgba(0, 201, 255, 0.3);
   color: #e0e0e0;
-  box-shadow: 0 4px 12px rgba(91, 163, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 201, 255, 0.08);
 }
 
 .pill-default:hover {
-  background: linear-gradient(135deg, rgba(91, 163, 0, 0.25), rgba(199, 186, 0, 0.2));
-  border-color: rgba(91, 163, 0, 0.5);
+  background: linear-gradient(135deg, rgba(0, 201, 255, 0.25), rgba(38, 222, 129, 0.2));
+  border-color: rgba(0, 201, 255, 0.5);
 }
 
 @media (min-width: 700px) {
