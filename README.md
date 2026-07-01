@@ -35,7 +35,7 @@ Getting this project running on your machine is pretty straightforward:
 
 ## Tech Radar
 
-The tech radar is a visual way I show my skills and expertise level. It's a circular chart with three rings:
+The tech radar is a visual way I show my skills and expertise level. It's inspired by the [Zalando Tech Radar](https://radar.zalando.com/) and adapted for my personal portfolio. It's a circular chart with three rings:
 
 - **NEWBIEE** — skills I'm just learning
 - **PROFESSIONAL** — skills I use regularly and feel confident with
