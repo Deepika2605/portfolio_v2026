@@ -331,13 +331,13 @@ export function radar_visualization(config) {
       .style('font-size', '16')
       .style('fill', '#999')
 
-    radar
-      .append('text')
-      .attr('transform', translate(config.footer_offset.x, config.footer_offset.y))
-      .text('▲ moved up ▼ moved down ★ new ⬤ no change')
-      .attr('xml:space', 'preserve')
-      .style('font-family', config.font_family)
-      .style('font-size', '15px')
+    // radar
+    //   .append('text')
+    //   .attr('transform', translate(config.footer_offset.x, config.footer_offset.y))
+    //   .text('▲ moved up ▼ moved down ★ new ⬤ no change')
+    //   .attr('xml:space', 'preserve')
+    //   .style('font-family', config.font_family)
+    //   .style('font-size', '15px')
 
     const legend = radar.append('g')
     for (let quadrant = 0; quadrant < 4; quadrant++) {
