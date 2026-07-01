@@ -3,6 +3,7 @@
 // Adapted for React: imports d3 as a module and exports radar_visualization.
 
 import * as d3 from 'd3'
+import { trackEvent } from './analytics'
 
 export function radar_visualization(config) {
   config.svg_id = config.svg || 'radar'
@@ -537,6 +538,15 @@ export function radar_visualization(config) {
     .data(config.entries)
     .enter()
     .append('g')
+    .on('click', function (event, d) {
+      trackEvent('radar_blip_click', {
+        label: d.label,
+        quadrant: config.quadrants[d.quadrant]?.name || d.quadrant,
+        ring: config.rings[d.ring]?.name || d.ring,
+        link: d.link || null,
+        transport_type: 'beacon',
+      })
+    })
     .attr('class', 'blip')
     .attr('transform', function (d, i) {
       return legend_transform(

@@ -1,8 +1,16 @@
 import { TechRadar } from '../TechRadar/TechRadar'
 import { techRadarConfig, skillsRadarConfig } from '../../lib/portfolio-data'
+import { useEffect } from 'react'
+import { trackEvent } from '../../lib/analytics'
 import './TechRadarSection.css'
 
 export function TechRadarSection() {
+  useEffect(() => {
+    trackEvent('tech_radar_view', {
+      section: 'tech_radar',
+      source: 'page_render',
+    })
+  }, [])
   return (
     <section className="section tech-radar-section" id="tech-radar">
       <div className="section__header">

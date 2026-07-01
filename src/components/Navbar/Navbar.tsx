@@ -1,5 +1,6 @@
 import './Navbar.css'
 import { portfolioData } from '../../lib/portfolio-data'
+import { trackEvent } from '../../lib/analytics'
 
 const links = [
   { href: '#about', label: 'About' },
@@ -18,7 +19,17 @@ export function Navbar() {
       </a>
       <nav className="navbar__nav" aria-label="Main navigation">
         {links.map((link) => (
-          <a key={link.href} href={link.href} className="navbar__link">
+          <a
+            key={link.href}
+            href={link.href}
+            className="navbar__link"
+            onClick={() =>
+              trackEvent('nav_link_click', {
+                section: link.label,
+                href: link.href,
+              })
+            }
+          >
             {link.label}
           </a>
         ))}

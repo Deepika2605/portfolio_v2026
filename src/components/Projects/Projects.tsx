@@ -1,5 +1,6 @@
 import './Projects.css'
 import { portfolioData } from '../../lib/portfolio-data'
+import { trackEvent } from '../../lib/analytics'
 
 export function Projects() {
   const projects = portfolioData?.projects ?? []
@@ -22,7 +23,17 @@ export function Projects() {
                 </span>
               ))}
             </div>
-            <a href={project.url ?? '#'} className="project-card__link">
+            <a
+              href={project.url ?? '#'}
+              className="project-card__link"
+              onClick={() =>
+                trackEvent('project_link_click', {
+                  project_title: project.title,
+                  project_url: project.url,
+                  transport_type: 'beacon',
+                })
+              }
+            >
               Learn more →
             </a>
           </article>

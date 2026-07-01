@@ -26,15 +26,17 @@ export function Hero() {
         {/* <a href="#projects" className="btn btn--primary">
           View projects
         </a> */}
-        <a href="#tech-radar" 
-          className="btn btn--primary" 
+        <a
+          href="#tech-radar"
+          className="btn btn--primary"
           onClick={() =>
-            trackEvent('button_click', {
-              button_name: 'tech_radar',
+            trackEvent('tech_radar_open', {
+              button_name: 'hero_tech_radar',
+              source: 'hero_section',
               transport_type: 'beacon',
             })
           }
-          >
+        >
           Tech radar
         </a>
       </div>
